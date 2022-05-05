@@ -45,21 +45,21 @@ class CinderMSACharm(
 
         volumedriver = 'cinder.volume.drivers.san.hp.hpmsa_iscsi.HPMSAISCSIDriver'
         driver_options = [
+            ('hpmsa_pool_name', self.config.get('hpmsa_pool_name')),
             ('volume_driver', volumedriver),
             ('volume_backend_name', self.service_name),
             ('san_ip', self.config.get('san-ip')),
             ('san_login', self.config.get('san-login')),
             ('san_password', self.config.get('san-password')),
-            ('hpmsa_iscsi_ips', self.config.get('hpmsa_iscsi_ips')),
             ('driver_use_ssl', self.config.get('driver_use_ssl')),
             ('hpmsa_verify_certificate', hpmsa_verify_certificate),
         ]
         
-        hpmsa_pool_name = self.config.get('hpmsa_pool_name')
-        if hpmsa_pool_name:
-            pool_names = [i for i in hpmsa_pool_name.split(" ") if i]
+        hpmsa_iscsi_ips = self.config.get('hpmsa_iscsi_ips')
+        if hpmsa_iscsi_ips:
+            pool_names = [i for i in hpmsa_iscsi_ips.split(" ") if i]
             driver_options.append(
-                ('hpmsa_pool_name', ", ".join(pool_names))
+                ('hpmsa_iscsi_ips', ", ".join(pool_names))
             )
 
         return driver_options

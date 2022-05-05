@@ -34,7 +34,7 @@ options:
   hpmsa_pool_name:
     type: string
     description: |
-      A space-delimited list of storage pool names to be used.
+      A storage pool name to be used.
       This option is required.
     default: !!null ""
   hpmsa_iscsi_ips:
