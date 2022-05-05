@@ -20,7 +20,7 @@ class CinderMSACharm(
     stateless = True
     # Specify any config that the user *must* set.
     mandatory_config = [
-        'san-ip', 'san-login', 'san-password', 'protocol']
+        'san-ip', 'san-login', 'san-password']
 
     def _ensure_unit_cfg_dir(self):
         basedir = "/etc/cinder"
