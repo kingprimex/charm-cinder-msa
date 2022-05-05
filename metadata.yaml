@@ -1,0 +1,22 @@
+name: cinder-msa
+summary: HP MSA integration for OpenStack Block Storage
+maintainer: Codrut Predoi <codrut@leadtech.ro>
+description: |
+  Cinder is the block storage service for the Openstack project.
+  .
+  This charm provides a hp msa backend for Cinder
+tags:
+- openstack
+- storage
+- misc
+series:
+- focal
+subordinate: true
+provides:
+  storage-backend:
+    interface: cinder-backend
+    scope: container
+requires:
+  juju-info:
+    interface: juju-info
+    scope: container
