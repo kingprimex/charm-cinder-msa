@@ -36,11 +36,6 @@ class CinderMSACharm(
         self.assess_status()
 
     def cinder_configuration(self):
-        san_ssh_port = self.config.get('san-ssh-port', 22)
-        thin_provisioning = self.config.get('san-thin-provision', True)
-        ssh_conn_timeout = self.config.get('ssh-con-timeout', 30)
-        ssh_max_pool_conn = self.config.get('ssh-max-pool-con', 5)
-        ssh_min_pool_conn = self.config.get('ssh-min-pool-con', 1)
         hpmsa_verify_certificate = self.config.get('hpmsa_verify_certificate', False)
 
         volumedriver = 'cinder.volume.drivers.san.hp.hpmsa_iscsi.HPMSAISCSIDriver'
