@@ -40,6 +40,7 @@ class CinderMSACharm(
 
         volumedriver = 'cinder.volume.drivers.san.hp.hpmsa_iscsi.HPMSAISCSIDriver'
         driver_options = [
+            ('hpmsa_backend_name', self.config.get('hpmsa_backend_name')),
             ('hpmsa_pool_name', self.config.get('hpmsa_pool_name')),
             ('volume_driver', volumedriver),
             ('volume_backend_name', self.service_name),
