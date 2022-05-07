@@ -43,7 +43,7 @@ class CinderMSACharm(
             ('hpmsa_backend_name', self.config.get('hpmsa_backend_name')),
             ('hpmsa_pool_name', self.config.get('hpmsa_pool_name')),
             ('volume_driver', volumedriver),
-            ('volume_backend_name', self.service_name),
+            ('volume_backend_name', self.config.get('volume_backend_name')),,
             ('san_ip', self.config.get('san-ip')),
             ('san_login', self.config.get('san-login')),
             ('san_password', self.config.get('san-password')),
