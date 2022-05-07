@@ -43,12 +43,6 @@ options:
       A storage backend name to be used.
       This option is required.
     default: !!null ""
-  hpmsa_pool_name:
-    type: string
-    description: |
-      A storage pool name to be used.
-      This option is required.
-    default: !!null ""
   hpmsa_iscsi_ips:
     type: string
     description:  |
