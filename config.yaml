@@ -31,6 +31,12 @@ options:
     type: string
     description: "Unisphere password"
     default: !!null ""
+  hpmsa_backend_name:
+    type: string
+    description: |
+      A storage backend name to be used.
+      This option is required.
+    default: !!null ""
   hpmsa_pool_name:
     type: string
     description: |
