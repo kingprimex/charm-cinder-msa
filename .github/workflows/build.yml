@@ -28,10 +28,8 @@ jobs:
       
       - name: Configure LXD
         run: |
-          sudo usermod -aG lxd $USER
-          newgrp lxd <<EONG
           sudo lxd init --auto
-          EONG
+          sudo usermod -aG lxd $USER    
 
       - name: Verify charmcraft.yaml exists
         run: |
@@ -41,7 +39,7 @@ jobs:
           fi
           
       - name: Build the charm
-        run: charmcraft pack
+        run: sudo charmcraft pack
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v3
