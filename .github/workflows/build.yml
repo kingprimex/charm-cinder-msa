@@ -24,6 +24,13 @@ jobs:
       - name: Install Charmcraft
         run: sudo snap install charmcraft --classic
 
+      - name: Verify charmcraft.yaml exists
+        run: |
+          if [ ! -f charmcraft.yaml ]; then
+            echo "charmcraft.yaml file not found in $(pwd)"
+            exit 1
+          fi
+          
       - name: Build the charm
         run: charmcraft pack
 
