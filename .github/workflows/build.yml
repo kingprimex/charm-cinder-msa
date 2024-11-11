@@ -21,8 +21,17 @@ jobs:
         with:
           python-version: '3.8'  # Charmcraft typically works well with Python 3.8
 
-      - name: Install Charmcraft
-        run: sudo snap install charmcraft --classic
+      - name: Install Charmcraft and LXD
+        run: |
+          sudo snap install charmcraft --classic
+          sudo snap install lxd --channel=5.0/stable
+      
+      - name: Configure LXD
+        run: |
+          sudo usermod -aG lxd $USER
+          newgrp lxd <<EONG
+          sudo lxd init --auto
+          EONG
 
       - name: Verify charmcraft.yaml exists
         run: |
