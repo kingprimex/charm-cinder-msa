@@ -1,28 +1,34 @@
-# Cinder MSA subordinate charm
+# Cinder MSA Subordinate Charm
 
-Acest charm integrează MSA ca backend in Cinder
+This charm integrates MSA as a backend for Cinder for OpenStack.
 
+## Building the Charm
 
-## Building the charm
+### Step 1: Install the Charm Tool
 
-Instalăm comanda ```charm```:
+To get started, install the `charm` tool using the following command:
 
 ```bash
-sudo snap insttall --classic charm
+sudo snap install --classic charm
 ```
 
-Clonăm repo-ul:
+### Step 2: Clone the Repository
+
+Next, clone the repository to your local machine:
 
 ```bash
 git clone git@github.com:kingprimex/charm-cinder-msa.git
 ```
 
-Dăm build:
+### Step 3: Build the Charm
+
+Navigate to the cloned directory and set the build directory environment variable:
 
 ```bash
+Copy code
 cd charm-cinder-msa
 export CHARM_BUILD_DIR=$HOME/deployment/build
 charm build
 ```
 
-Varianta finală a charmului va fi în: $HOME/deployment/build/cinder-msa
+The final version of the charm will be located in: $HOME/deployment/build/cinder-msa
