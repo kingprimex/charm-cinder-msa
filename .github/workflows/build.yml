@@ -39,7 +39,7 @@ jobs:
           fi
           
       - name: Build the charm
-        run: sudo charmcraft pack
+        run: sudo charmcraft pack --destructive-mode
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v3
