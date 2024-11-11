@@ -25,7 +25,6 @@ git clone git@github.com:kingprimex/charm-cinder-msa.git
 Navigate to the cloned directory and set the build directory environment variable:
 
 ```bash
-Copy code
 cd charm-cinder-msa
 export CHARM_BUILD_DIR=$HOME/deployment/build
 charm build
